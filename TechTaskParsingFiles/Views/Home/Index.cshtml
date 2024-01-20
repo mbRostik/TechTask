@@ -1,0 +1,31 @@
+﻿@model List<JsonModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h2>My Data List</h2>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a asp-controller="Home" asp-action="JsonTree" asp-route-id="@item.Id">
+                @item.Id
+            </a>
+        </li>
+    }
+</ul>
+
+<br />
+<br />
+<br />
+
+<div class="text-center">
+    <h2>Upload JSON or TXT File</h2>
+    <form method="post" enctype="multipart/form-data" action="/Home/JsonTree">
+        <div class="form-group">
+            <input type="file" name="file" accept=".json, .txt" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+﻿@model TechTaskParsingFiles.Models.Tree
+
+@{
+    ViewData["Title"] = "JSON Show";
+}
+
+<h2>Details for @Model.Key</h2>
+
+<ul>
+    <li>
+        <strong>Key:</strong> @Model.Key
+    </li>
+
+    @if (@Model.Value != null)
+    {
+        <li>
+            <strong>Value:</strong> @Model.Value
+        </li>
+    }
+
+
+</ul>
+
+@if (Model.Children != null && Model.Children.Any())
+{
+    <h3>Children:</h3>
+    <ul>
+        @foreach (var child in Model.Children)
+        {
+            <li>
+                <strong>@child.Key </strong> @child.Value
+            </li>
+        }
+    </ul>
+}
