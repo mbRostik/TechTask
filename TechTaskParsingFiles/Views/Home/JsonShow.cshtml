@@ -4,32 +4,32 @@
     ViewData["Title"] = "JSON Show";
 }
 
-<h2>Details for @Model.Key</h2>
+<div class="json-show-container">
+    <h2>Details for @Model.Key</h2>
 
-<ul>
-    <li>
-        <strong>Key:</strong> @Model.Key
-    </li>
-
-    @if (@Model.Value != null)
-    {
-        <li>
-            <strong>Value:</strong> @Model.Value
-        </li>
-    }
-
-
-</ul>
-
-@if (Model.Children != null && Model.Children.Any())
-{
-    <h3>Children:</h3>
     <ul>
-        @foreach (var child in Model.Children)
+        <li class="json-show-item">
+            <strong class="json-show-key">Key:</strong> @Model.Key
+        </li>
+
+        @if (@Model.Value != null)
         {
-            <li>
-                <strong>@child.Key </strong> @child.Value
+            <li class="json-show-item">
+                <strong class="json-show-key">Value:</strong> <span class="json-show-value">@Model.Value</span>
             </li>
         }
     </ul>
-}
+
+    @if (Model.Children != null && Model.Children.Any())
+    {
+        <h3>Children:</h3>
+        <ul class="json-show-children">
+            @foreach (var child in Model.Children)
+            {
+                <li class="json-show-item">
+                    <strong class="json-show-key">@child.Key </strong> <span class="json-show-value">@child.Value</span>
+                </li>
+            }
+        </ul>
+    }
+</div>

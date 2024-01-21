@@ -5,25 +5,26 @@
     ViewData["Title"] = "JSONMyUrl Tree";
 }
 
-<ul>
-    @foreach (var node in Model)
-    {
-        <li>
-            @if (!string.IsNullOrEmpty(node.Value))
-            {
-                <strong>@node.Key:</strong> @node.Value
-            }
-            else
-            {
-                <strong><a asp-controller="Home" asp-action="JsonShow" asp-route-id="@node.Key" asp-route-children="@JsonConvert.SerializeObject(node.Children)">@node.Key:</a></strong>
-                @if (node.Children != null && node.Children.Any())
+<div class="json-myurl-container">
+    <ul>
+        @foreach (var node in Model)
+        {
+            <li class="json-myurl-item">
+                @if (!string.IsNullOrEmpty(node.Value))
                 {
-
-                    <ul>
-                        @await Html.PartialAsync("JsonTree", node.Children)
-                    </ul>
+                    <strong class="json-myurl-key">@node.Key:</strong> <span class="json-myurl-value">@node.Value</span>
                 }
-            }
-        </li>
-    }
-</ul>
+                else
+                {
+                    <strong class="json-myurl-key"><a asp-controller="Home" asp-action="JsonShow" asp-route-id="@node.Key" asp-route-children="@JsonConvert.SerializeObject(node.Children)">@node.Key:</a></strong>
+                    @if (node.Children != null && node.Children.Any())
+                    {
+                        <ul class="json-myurl-children">
+                            @await Html.PartialAsync("JsonTree", node.Children)
+                        </ul>
+                    }
+                }
+            </li>
+        }
+    </ul>
+</div>

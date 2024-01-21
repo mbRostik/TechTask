@@ -1,25 +1,24 @@
 ﻿@using Newtonsoft.Json
 @model List<TechTaskParsingFiles.Models.Tree>
+
 @{
     ViewData["Title"] = "JSON Tree";
 }
 
-<ul>
+<ul class="json-tree">
     @foreach (var node in Model)
     {
-        <li>
+        <li class="json-tree-item">
             @if (!string.IsNullOrEmpty(node.Value))
             {
-                <strong>@node.Key:</strong> @node.Value
+                <strong class="json-key">@node.Key:</strong> <span class="json-value">@node.Value</span>
             }
             else
             {
-
-                <strong><a asp-controller="Home" asp-action="JsonShow" asp-route-id="@node.Key" asp-route-children="@JsonConvert.SerializeObject(node.Children)">@node.Key:</a></strong>
+                <strong class="json-key"><a class="json-link" asp-controller="Home" asp-action="JsonShow" asp-route-id="@node.Key" asp-route-children="@JsonConvert.SerializeObject(node.Children)">@node.Key:</a></strong>
                 @if (node.Children != null && node.Children.Any())
                 {
-
-                    <ul>
+                    <ul class="json-tree-sub">
                         @await Html.PartialAsync("JsonTree", node.Children)
                     </ul>
                 }

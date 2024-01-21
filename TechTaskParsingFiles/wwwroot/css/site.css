@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -21,3 +21,163 @@ body {
   margin-bottom: 60px;
 }
 
+.index {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.inputFile {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .inputFile h2 {
+        color: #333;
+    }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .btn-primary:hover {
+        background-color: #2980b9;
+    }
+
+.Indexrightside {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.dataList ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.dataList li {
+    margin: 5px;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.dataList a {
+    text-decoration: none;
+    color: #333;
+}
+
+    .dataList a:hover {
+        text-decoration: underline;
+        color: #3498db;
+    }
+
+
+.json-tree {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.json-tree-item {
+    margin: 10px 0;
+}
+
+.json-key {
+    color: black;
+}
+
+.json-link {
+    text-decoration: none;
+    color: mediumaquamarine;
+}
+
+    .json-link:hover {
+        text-decoration: underline;
+        color: #3498db;
+    }
+
+.json-tree-sub {
+    margin-left: 20px;
+}
+
+.json-tree-item {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.json-key {
+    font-weight: bold;
+}
+
+.json-value {
+    color: black;
+}
+
+
+.json-show-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.json-show-key {
+    color: black;
+    font-weight: bold;
+}
+
+.json-show-value {
+    color: black;
+}
+
+.json-show-children {
+    margin-left: 20px;
+}
+
+.json-show-item {
+    margin: 10px 0;
+}
+
+.json-myurl-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.json-myurl-key {
+    color: black;
+    font-weight: bold;
+}
+
+.json-myurl-value {
+    color: #3498db;
+}
+
+.json-myurl-children {
+    margin-left: 20px;
+}
+
+.json-myurl-item {
+    margin: 10px 0;
+}
